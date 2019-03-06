@@ -3,17 +3,24 @@ from django.db import models
 
 
 class Manager(models.Model):
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
     company_name = models.CharField(max_length=35)
-    address = models.CharField(max_field=75)
+    address = models.CharField(max_length=75)
     phone_number = models.IntegerField()
+    
 
 class Employee(models.Model):
     first_name = models.CharField(max_length=12)
     last_name = models.CharField(max_length=12)
-    pay_rate = models.DateField()
-    start_date = models.DateField()
-    end_date = models.DateField()
+    pay_rate = models.DateField(default = None, null=True)
+    start_date = models.DateField(default = None, null=True)
+    end_date = models.DateField(default = None, null=True)
     pin_code = models.IntegerField()
     manager_id = models.ForeignKey("Manager", on_delete=models.CASCADE)
 
-
+class Shift(models.Model):
+    clock_in_time = models.TimeField(default = None, null=True)
+    clock_out_time = models.TimeField(default = None, null=True)
+    clock_in_time = models.DateField(default = None, null=True)
+    clock_out_time = models.DateField(default = None, null=True)
+    employee_id = models.ForeignKey("Employee", on_delete=models.CASCADE)
