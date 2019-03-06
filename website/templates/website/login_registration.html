@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div>
+    <a href="{% url 'website:index' %}">Home</a>
+</div>
+{% block login %}
+{% include "login.html" %}
+{% endblock login %}
+<div>
+    <a href="{% url 'website:login' %}">Login</a>
+</div>
+{% endblock content %}
