@@ -1,13 +1,16 @@
 {% extends "index.html" %}
 
 {% block content %}
-<div>
-    <a href="{% url 'website:index' %}">Home</a>
-</div>
 {% block login %}
 {% include "login.html" %}
 {% endblock login %}
+</br>
 <div>
-    <a href="{% url 'website:login' %}">Login</a>
+    <h3>Register:</h3>
+    <a href="{% url 'website:register' %}">Register</a>
+</div>
+</br>
+<div>
+    <a href="{% url 'website:index' %}">Home</a>
 </div>
 {% endblock content %}
