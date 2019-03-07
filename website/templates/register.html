@@ -1,31 +1,32 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Bangazon</title>
-    </head>
+{% extends "index.html" %}
+{% block content %}
 
-    <body>
-        <h1>Register with Shift Tally</h1>
+    <h1>Register with Shift Tally</h1>
 
-        {% if registered %}
-        <strong>Thank you for registering!</strong>
-        <a href="{% url 'website:index' %}">Return to the homepage.</a><br />
-        {% else %}
-        <strong>Register here!</strong><br />
+    {% if registered %}
+    <strong>Thank you for registering!</strong>
+    <a href="{% url 'website:index' %}">Return to the homepage.</a><br />
+    {% else %}
+    <strong>Register here!</strong><br />
 
-        <form id="user_form" method="post" action="{% url 'website:register' %}"
-                enctype="multipart/form-data">
+    <form id="user_form" method="post" action="{% url 'website:register' %}"
+            enctype="multipart/form-data">
 
-            {% csrf_token %}
+        {% csrf_token %}
 
-            <!-- Display each form. The as_p method wraps each element in a paragraph
-                 (<p>) element. This ensures each element appears on a new line,
-                 making everything look neater. -->
-            {{ user_form.as_p }}
-            {{ manager_form.as_p }}
-            <!-- Provide a button to click to submit the form. -->
-            <input type="submit" name="submit" value="Register" />
-        </form>
-        {% endif %}
-    </body>
-</html>
+        <!-- Display each form. The as_p method wraps each element in a paragraph
+                (<p>) element. This ensures each element appears on a new line,
+                making everything look neater. -->
+        {{ user_form.as_p }}
+        {{ manager_form.as_p }}
+        <a class="nav-link link" href="{% url 'website:loginRegistration' %}">
+            <button type="button" class="btn btn-outline-info">
+                <i class="fas fa-arrow-circle-left"></i> Back</button></a>
+                
+            
+            
+        <input type="submit" name="submit" value="Register" class="btn btn-outline-primary" />
+
+    </form>
+    {% endif %}
+{% endblock content %}

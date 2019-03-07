@@ -12,7 +12,7 @@ class Manager(models.Model):
 class Employee(models.Model):
     first_name = models.CharField(max_length=12)
     last_name = models.CharField(max_length=12)
-    pay_rate = models.DateField(default = None, null=True)
+    pay_rate = models.IntegerField()
     start_date = models.DateField(default = None, null=True)
     end_date = models.DateField(default = None, null=True)
     pin_code = models.IntegerField()
@@ -21,6 +21,6 @@ class Employee(models.Model):
 class Shift(models.Model):
     clock_in_time = models.TimeField(default = None, null=True)
     clock_out_time = models.TimeField(default = None, null=True)
-    clock_in_time = models.DateField(default = None, null=True)
-    clock_out_time = models.DateField(default = None, null=True)
-    employee_id = models.ForeignKey("Employee", on_delete=models.CASCADE)
+    clock_in_date = models.DateField(default = None, null=True)
+    clock_out_date = models.DateField(default = None, null=True)
+    employee = models.ForeignKey("Employee", on_delete=models.CASCADE)
