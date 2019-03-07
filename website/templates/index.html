@@ -1,32 +1,35 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+<head>
+  <meta charset="utf-8">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-        crossorigin="anonymous">
-    <title>Shift Tally</title>
-  </head>
-  <body>
-    
-    {% block nav %}
-    {% include "website/home_navbar.html" %}
-    {% endblock nav %}
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous">
+  <title>Shift Tally</title>
+</head>
+<body>    
+{% if user.is_authenticated %}
+  {% block usernav %}
+  {% include "website/user_home_navbar.html" %}
+  {% endblock usernav %}
+{% else %}  
+  {% block nav %}
+  {% include "website/home_navbar.html" %}
+  {% endblock nav %}
+{% endif %}
 
 
-    {% block content %}
-
-        <h1>Welcome to Shift Tally!</h1>
-        {% block number_pad %}
-        {% include "website/number_pad.html" %}
-        {% endblock number_pad %}
-    
-    {% endblock content %}
+{% block content %}
+  <h1>Welcome to Shift Tally!</h1>
+  {% block number_pad %}
+  {% include "website/number_pad.html" %}
+  {% endblock number_pad %}
+{% endblock content %}
 
 
 

@@ -1,0 +1,32 @@
+{% block usernav %}
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">
+    <i class="fas fa-calculator"></i> Shift Tally</a>
+  <ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link link" href="{% url 'website:loginRegistration' %}">
+            <i class="far fa-user">
+            </i>
+        Active Employees</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link link" href="{% url 'website:loginRegistration' %}">
+            <i class="fas fa-user-times">
+            </i>
+        Inactive Employees</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link link" href="{% url 'website:loginRegistration' %}">
+            <i class="fas fa-cog">
+            </i>
+        Account</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link link" href="{% url 'website:logout' %}">
+            <i class="fas fa-sign-out-alt">
+            </i>
+        Logout</a>
+    </li>  
+  </ul>
+</nav>
+{% endblock usernav %}
