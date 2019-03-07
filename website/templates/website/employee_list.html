@@ -1,0 +1,16 @@
+{% block employeeList %}
+<div class="container">
+<h1 class="mt-4 mb-3">All Employees</h1>
+
+<ul class="list-group">
+    {% for employee in all_employees %}
+    <div class='grid-container'>
+    <li class="list-group-item">
+        {{ employee.first_name }} {{ employee.last_name }}
+    </li>
+    </div>
+    {% endfor %}
+</ul>
+
+</div>
+{% endblock employeeList %}

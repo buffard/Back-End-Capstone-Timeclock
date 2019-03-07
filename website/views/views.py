@@ -5,10 +5,13 @@ from django.shortcuts import render
 from django.template import RequestContext
 
 from website.forms import UserForm, ManagerForm
+from ..models import Employee
 
 def index(request):
     template_name = 'index.html'
-    return render(request, template_name, {})
+    all_employees = Employee.objects.all()
+    context = {'all_employees': all_employees}
+    return render(request, template_name, context)
 
 
 # Create your views here.

@@ -11,5 +11,7 @@ urlpatterns = [
     url(r'^register$', views.register, name='register'),
     path('loginRegistration/', views.loginRegistration, name='loginRegistration'),
     path('user-home/', views.userHome, name='user-home'),
+    path('employees/', views.employeeList, name='employeeList'),
+
     
 ]
