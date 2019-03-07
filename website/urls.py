@@ -1,6 +1,7 @@
 from django.conf.urls import url
+from django.urls import path
 
-from . import views
+from website import views
 
 app_name = "website"
 urlpatterns = [
@@ -8,5 +9,8 @@ urlpatterns = [
     url(r'^login$', views.login_user, name='login'),
     url(r'^logout$', views.user_logout, name='logout'),
     url(r'^register$', views.register, name='register'),
+    path('loginRegistration/', views.loginRegistration, name='loginRegistration'),
     
+    
+
 ]

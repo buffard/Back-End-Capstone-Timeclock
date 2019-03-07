@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render
 from django.template import RequestContext
 
-from website.forms import UserForm
+from website.forms import UserForm, ManagerForm
 
 def index(request):
     template_name = 'index.html'
@@ -27,10 +27,15 @@ def register(request):
     # on Django's built-in User model
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
+        manager_form = ManagerForm(data=request.POST)
 
-        if user_form.is_valid():
+        if user_form.is_valid() and manager_form.is_valid():
             # Save the user's form data to the database.
             user = user_form.save()
+            manager = manager_form.save(commit=False)
+            manager.user = user
+            manager.save()
+
 
             # Now we hash the password with the set_password method.
             # Once hashed, we can update the user object.
@@ -44,8 +49,9 @@ def register(request):
 
     elif request.method == 'GET':
         user_form = UserForm()
+        manager_form = ManagerForm()
         template_name = 'register.html'
-        return render(request, template_name, {'user_form': user_form})
+        return render(request, template_name, {'user_form': user_form, 'manager_form': manager_form})
 
 
 def login_user(request):
