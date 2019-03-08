@@ -1,5 +1,9 @@
 {% block employeeList %}
 <div class="container">
+  <a class="nav-link link" href="{% url 'website:addEmployee' %}">
+    <button type="button" class="btn btn-success"><i class="fas fa-user-plus"></i> Add Employee</button>
+  </a>
+
 <h1 class="mt-4 mb-3">All Employees</h1>
 
 <ul class="list-group">
