@@ -1,4 +1,11 @@
 {% extends "index.html" %}
 {% block content %}
 <h1>You're Logged In!</h1>
+
+
+{% block employeeList %}
+{% include "website/employee_list.html" %}
+{% endblock employeeList %}
+
+
 {% endblock content %}

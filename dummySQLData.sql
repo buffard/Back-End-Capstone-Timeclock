@@ -1,6 +1,6 @@
-INSERT INTO website_employee VALUES (null, 'Adam', 'Annoyed', 12, '1999-03-03', Null, 1111, 1);
-INSERT INTO website_employee VALUES (null, 'Beatrice', 'Betrayed', 15, '2018-03-03', Null, 2222, 1);
-INSERT INTO website_employee VALUES (null, 'Case', 'Camera', 13, '2019-01-22', Null, 3333, 1);
+INSERT INTO website_employee VALUES (null, 'Adam', 'Annoyed', 12, '1999-03-03', Null, 1111, 1, 1);
+INSERT INTO website_employee VALUES (null, 'Beatrice', 'Betrayed', 15, '2018-03-03', Null, 2222, 1, 1);
+INSERT INTO website_employee VALUES (null, 'Case', 'Camera', 13, '2019-01-22', Null, 3333, 1, 1);
 
 INSERT INTO website_shift VALUES (null, '08:00', '12:00', '2019-03-01', '2019-03-01', 1);
 INSERT INTO website_shift VALUES (null, '08:13', '12:36', '2019-03-02', '2019-03-02', 1);
