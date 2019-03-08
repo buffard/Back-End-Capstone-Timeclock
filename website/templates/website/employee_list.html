@@ -6,7 +6,9 @@
     {% for employee in all_employees %}
     <div class='grid-container'>
     <li class="list-group-item">
+      <a class="text-info" href="{% url 'website:employeeDetail' employee.id %}">
         {{ employee.first_name }} {{ employee.last_name }}
+      </a>
     </li>
     </div>
     {% endfor %}
