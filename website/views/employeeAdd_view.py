@@ -1,22 +1,28 @@
 from django.shortcuts import render, get_object_or_404
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.http import HttpResponseRedirect
 
+from django.contrib.auth.models import User
 
+from website.models import Employee, Manager
 from website.forms import EmployeeForm
 
 
 def addEmployee(request):
 
   if request.method == 'POST':
-    employee_form = EmployeeForm(data=request.POST)
+    form_data = request.POST
+    employee = Employee(
+      first_name = form_data['first_name'],
+      last_name = form_data['last_name'],
+      pay_rate = form_data['pay_rate'],
+      start_date = form_data['start_date'],
+      pin_code = form_data['pin_code'],
+      manager = request.user.manager
+    )
+    employee.save()
 
-    if employee_form.is_valid():
-      # Save the user's form data to the database.
-      employee = employee_form.save()
-      employee.save()
-
-      return HttpResponseRedirect(reverse('website:employeeList'))
+    return HttpResponseRedirect(reverse('website:user-home'))
 
 
   elif request.method == 'GET':
