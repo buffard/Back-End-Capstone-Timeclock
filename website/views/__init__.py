@@ -4,3 +4,4 @@ from .userHome_view import userHome
 from .employee_view import employeeList
 from .employeeDetail_view import employeeDetail
 from .employeeAdd_view import addEmployee
+from .shift_view import shiftList

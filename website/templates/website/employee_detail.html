@@ -35,4 +35,15 @@
 
 </div>
 </div>
+
+<ul class="list-group">
+    {% for shift in all_shifts %}
+    <div class='grid-container'>
+    <li class="list-group-item">
+      <p>Clock In: {{ shift.clock_in_date}}, {{ shift.clock_in_time }} Clock Out: {{ shift.clock_out_date}}, {{ shift.clock_out_time }}</p>
+    
+    </li>
+    </div>
+    {% endfor %}
+</ul>
 {% endblock content %}
