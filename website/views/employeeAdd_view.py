@@ -29,3 +29,4 @@ def addEmployee(request):
     employee_form = EmployeeForm()
     template_name = 'website/employee_add.html'
     return render(request, template_name, {'employee_form': employee_form})
+

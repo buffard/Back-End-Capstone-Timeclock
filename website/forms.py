@@ -21,6 +21,12 @@ class EmployeeForm(forms.ModelForm):
   class Meta:
     model = Employee
     fields = ('first_name', 'last_name', 'pay_rate', 'start_date', 'pin_code',)
+
+class EmployeeEditForm(forms.ModelForm):
+  
+  class Meta:
+    model = Employee
+    fields = ('first_name', 'last_name', 'pay_rate', 'start_date', 'pin_code',)
   
 
 
