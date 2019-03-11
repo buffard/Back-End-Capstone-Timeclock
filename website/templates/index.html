@@ -10,26 +10,29 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
       crossorigin="anonymous">
+  <!-- CSS File -->
+  <link rel="stylesheet" href="../static/index.css" />
+
   <title>Shift Tally</title>
 </head>
-<body>    
-{% if user.is_authenticated %}
-  {% block usernav %}
-  {% include "website/user_home_navbar.html" %}
-  {% endblock usernav %}
-{% else %}  
-  {% block nav %}
-  {% include "website/home_navbar.html" %}
-  {% endblock nav %}
-{% endif %}
+<body> 
 
+  {% if user.is_authenticated %}
+    {% block usernav %}
+    {% include "website/user_home_navbar.html" %}
+    {% endblock usernav %}
+  {% else %}  
+    {% block nav %}
+    {% include "website/home_navbar.html" %}
+    {% endblock nav %}
+  {% endif %}
 
-{% block content %}
-  <h1>Welcome to Shift Tally!</h1>
-  {% block number_pad %}
-  {% include "website/number_pad.html" %}
-  {% endblock number_pad %}
-{% endblock content %}
+  {% block content %}
+    <h1>Welcome to Shift Tally!</h1>
+    {% block number_pad %}
+    {% include "website/number_pad.html" %}
+    {% endblock number_pad %}
+  {% endblock content %}
 
 
 
@@ -41,5 +44,6 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+  
   </body>
 </html>

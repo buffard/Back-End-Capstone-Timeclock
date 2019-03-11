@@ -1,13 +1,49 @@
 {% extends "index.html" %}
 
 {% block content %}
+<div class="cardSize">
 <div class="card">
-  <h3 class="mt-4 mb-3 card-header">{{ employee.first_name }} {{ employee.last_name}}</h3>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="{% url 'website:user-home' %}">Back</a>
-      <a href="#" class="btn btn-info">Edit</a>
+  <div>
+    <h3 class="mt-4 mb-3 card-header">{{ employee.first_name }} {{ employee.last_name}}</h3>
+  </div>
+
+  <div class="card-body">  
+    
+    <h5 class="card-title">Details:</h5>
+    
+    <div class="row">
+      <div class="col">
+        <p class="card-text">Pay Rate: {{ employee.pay_rate }}</p>
+      </div>
+      <div class="col">
+        <p class="card-text">Start Date: {{ employee.start_date }}</p>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col">
+        <p class="card-text">End Date: {{ employee.end_date }}</p>
+      </div>
+      <div class="col">
+        <p class="card-text">Pin Code: {{ employee.pin_code }}</p>
+      </div>
+    </div>
+
+    <a href="{% url 'website:user-home' %}">Back</a>
+    <a href="#" class="btn btn-info">Edit</a>
+  </div>  
+
 </div>
+</div>
+
+<ul class="list-group">
+    {% for shift in all_shifts %}
+    <div class='grid-container'>
+    <li class="list-group-item">
+      <p>Clock In: {{ shift.clock_in_date}}, {{ shift.clock_in_time }} Clock Out: {{ shift.clock_out_date}}, {{ shift.clock_out_time }}</p>
+    
+    </li>
+    </div>
+    {% endfor %}
+</ul>
 {% endblock content %}
