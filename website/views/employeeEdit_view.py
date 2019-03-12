@@ -8,7 +8,7 @@ from website.forms import EmployeeEditForm
 
 def editEmployee(request, employee_id):
   employee = get_object_or_404(Employee, pk=employee_id)
-  print('HEREHERE', employee_id)
+  
   if request.method == 'POST':
     form_data = request.POST
   
@@ -27,4 +27,7 @@ def editEmployee(request, employee_id):
     template_name = 'website/employee_edit.html'
     context = {'employeeEdit_form': employee_form, 'employee': employee_id}
     return render(request, template_name, context)
+
+
+
 

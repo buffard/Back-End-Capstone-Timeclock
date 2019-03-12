@@ -5,3 +5,4 @@ from .employee_view import employeeList
 from .employeeDetail_view import employeeDetail
 from .employeeAdd_view import addEmployee
 from .employeeEdit_view import editEmployee
+from .inactiveEmployee_view import inactiveEmployee
