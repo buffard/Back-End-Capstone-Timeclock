@@ -17,7 +17,11 @@ def editEmployee(request, employee_id):
     employee.pay_rate = form_data['pay_rate']
     employee.start_date = form_data['start_date']
     employee.pin_code = form_data['pin_code']
-    employee.end_date = form_data['end_date']
+    if form_data['end_date'] == '':
+      employee.end_date = None
+    else:
+      employee.end_date = form_data['end_date']
+
     employee.manager = request.user.manager
 
     employee.save()

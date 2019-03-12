@@ -45,6 +45,7 @@ class EmployeeEditForm(forms.ModelForm):
       'pin_code': 'Pin Code',
       'end_date': 'Make Inactive',
     }
+    
   
        
 
