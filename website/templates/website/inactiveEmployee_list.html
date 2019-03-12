@@ -1,14 +1,12 @@
-{% block employeeList %}
-<div class="container">
-  <a class="nav-link link" href="{% url 'website:addEmployee' %}">
-    <button type="button" class="btn btn-success"><i class="fas fa-user-plus"></i> Add Employee</button>
-  </a>
+{% extends "index.html" %}
 
-<h1 class="mt-4 mb-3">All Employees</h1>
+{% block content %}
+
+<h1 class="mt-4 mb-3">All Inactive Employees</h1>
 
 <ul class="list-group">  
     {% for employee in all_employees %}
-    {% if employee.end_date == Null %}
+    {% if employee.end_date != Null %}
     <div class='grid-container'>
     <li class="list-group-item">
       <a class="text-info" href="{% url 'website:employeeDetail' employee.id %}">
@@ -22,4 +20,4 @@
 </ul>
 
 </div>
-{% endblock employeeList %}
+{% endblock content %}

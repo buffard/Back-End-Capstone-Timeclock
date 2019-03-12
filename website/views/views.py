@@ -10,7 +10,7 @@ from website.forms import UserForm, ManagerForm
 def index(request):
     template_name = 'index.html'
   
-    return render(request, template_name, context)
+    return render(request, template_name)
 
 
 # Create your views here.

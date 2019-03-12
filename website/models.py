@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+
 class Manager(models.Model):
   user = models.OneToOneField(User, on_delete=models.PROTECT)
   company_name = models.CharField(max_length=35)
@@ -13,10 +14,10 @@ class Employee(models.Model):
   first_name = models.CharField(max_length=12)
   last_name = models.CharField(max_length=12)
   pay_rate = models.IntegerField()
-  start_date = models.DateField(default = None, null=True)
-  end_date = models.DateField(default = None, null=True)
+  start_date = models.DateField(default=None, null=True)
+  end_date = models.DateField(default=None, null=True, blank=True)
   pin_code = models.IntegerField()
-  isActive = models.BooleanField(default=True)
+  deactivate = models.BooleanField(default=False)
   manager = models.ForeignKey("Manager", on_delete=models.CASCADE)
 
 class Shift(models.Model):

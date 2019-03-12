@@ -27,13 +27,14 @@
     {% endblock nav %}
   {% endif %}
 
+<div class="container">
   {% block content %}
-    <h1>Welcome to Shift Tally!</h1>
-    {% block number_pad %}
-    {% include "website/number_pad.html" %}
-    {% endblock number_pad %}
+  <h1>Welcome to Shift Tally!</h1>
+  {% block number_pad %}
+  {% include "website/number_pad.html" %}
+  {% endblock number_pad %}
   {% endblock content %}
-
+</div>
 
 
     <!-- JavaScript ofr Bootstrap -->
