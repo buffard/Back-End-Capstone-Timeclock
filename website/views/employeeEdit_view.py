@@ -23,7 +23,7 @@ def editEmployee(request, employee_id):
     return HttpResponseRedirect(reverse('website:user-home'))
   
   elif request.method == 'GET':
-    employee_form = EmployeeEditForm(instance=employee)
+    employee_form = EmployeeEditForm(instance= employee)
     template_name = 'website/employee_edit.html'
     context = {'employeeEdit_form': employee_form, 'employee': employee_id}
     return render(request, template_name, context)

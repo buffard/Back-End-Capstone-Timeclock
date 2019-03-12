@@ -16,17 +16,26 @@ class ManagerForm(forms.ModelForm):
     model = Manager
     fields = ('company_name', 'address', 'phone_number',)
 
+class DateInput(forms.DateInput):
+  input_type = 'date'
+
 class EmployeeForm(forms.ModelForm):
   
   class Meta:
     model = Employee
     fields = ('first_name', 'last_name', 'pay_rate', 'start_date', 'pin_code',)
+    widgets = {
+      'start_date': DateInput(),
+    }
 
 class EmployeeEditForm(forms.ModelForm):
   
   class Meta:
     model = Employee
     fields = ('first_name', 'last_name', 'pay_rate', 'start_date', 'pin_code',)
+    widgets = {
+      'start_date': DateInput(),
+    }
   
 
 
