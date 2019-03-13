@@ -14,7 +14,7 @@
         {{ user_form.as_p }}
         {{ manager_form.as_p }}
 
-        <a class="nav-link link" href="{% url 'website:user-home' %}">
+        <a class="nav-link link" href="{% url 'website:account' user.id %}">
             <button type="button" class="btn btn-outline-info">
                 <i class="fas fa-arrow-circle-left"></i> Back</button></a>
                 
