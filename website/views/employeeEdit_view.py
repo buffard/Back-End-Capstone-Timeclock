@@ -25,7 +25,7 @@ def editEmployee(request, employee_id):
     employee.manager = request.user.manager
 
     employee.save()
-    return HttpResponseRedirect(reverse('website:user-home'))
+    return HttpResponseRedirect(reverse('website:employeeDetail', args=[employee.id]))
   
   elif request.method == 'GET':
     employee_form = EmployeeEditForm(instance= employee)
