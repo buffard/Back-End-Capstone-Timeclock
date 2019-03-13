@@ -7,3 +7,4 @@ from .employeeAdd_view import addEmployee
 from .employeeEdit_view import editEmployee
 from .inactiveEmployee_view import inactiveEmployee
 from .account_view import account
+from .accountEdit_view import accountEdit

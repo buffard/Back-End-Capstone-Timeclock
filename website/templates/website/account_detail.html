@@ -31,19 +31,16 @@
           <div class="col">
             <p class="card-text">Address: {{ manager.address }}</p>
           </div>
+        </div>
+        <div class="row">
           <div class="col">
             <p class="card-text">Phone Number: {{ manager.phone_number }} </p>
           </div>
         </div>
-    
         <a href="{% url 'website:user-home' %}">
             <button type="button" class="btn btn-outline-info">
                 <i class="fas fa-arrow-circle-left"></i> Back</button></a>
-    
-    
-    
-    
-    
+                <a href="{% url 'website:accountEdit' user.id %}" class="btn btn-primary">Edit</a>
       </div>  
     
     </div>
