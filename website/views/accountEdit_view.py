@@ -24,7 +24,7 @@ def accountEdit(request, manager_id):
 
     user.save()
     manager.save()
-    return HttpResponseRedirect(reverse('website:account'))
+    return HttpResponseRedirect(reverse('website:account', args=[user.id]))
   
   elif request.method == 'GET':
     user_form = UserEditForm(instance= user)
