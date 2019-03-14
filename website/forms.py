@@ -57,6 +57,6 @@ class ManagerEditForm(forms.ModelForm):
   class Meta:
     model = Manager
     fields = ('company_name', 'address', 'phone_number',)
-  
-       
+
+
 
