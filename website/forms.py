@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms
-from website.models import Manager, Employee
+from website.models import Manager, Employee, Shift
 
 
 class UserForm(forms.ModelForm):
@@ -58,5 +58,8 @@ class ManagerEditForm(forms.ModelForm):
     model = Manager
     fields = ('company_name', 'address', 'phone_number',)
 
+class ShiftEditForm(forms.ModelForm):
 
-
+  class Meta:
+    model = Shift
+    fields = ('clock_in_time', 'clock_in_date', 'clock_out_time', 'clock_out_date',)
