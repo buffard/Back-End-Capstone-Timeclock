@@ -9,11 +9,8 @@ from website.forms import ShiftEditForm
 def clockinEdit(request, shift_id):
   shift = get_object_or_404(Shift, pk=shift_id)
   
-  print("HERHERHEJKHRJKEHJKR", shift)
-  
   if request.method == 'POST':
     form_data = request.POST
-  
     shift.clock_in_time = form_data['clock_in_time']
     shift.clock_in_date = form_data['clock_in_date']
     shift.clock_out_time = form_data['clock_out_time']
