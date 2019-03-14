@@ -3,10 +3,8 @@ from django.shortcuts import render, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.utils import timezone 
-import datetime
-
 from website.models import Employee, Shift
-
+import datetime
 
 
 def clockin(request):
@@ -14,19 +12,20 @@ def clockin(request):
   if request.method == 'POST':
     form_data = request.POST.get('pin_code')
     employee = Employee.objects.get(pin_code=form_data)
+    # Filter through the shifts and find the ones where the employee ids match
+    # then filter through those to only find shift that have a clock out date equal to null
     shifts = Shift.objects.filter(employee=employee).filter(clock_out_date=None)
-    print("AAAAAAAAAAAAAAAA", employee)
-    print("BBBBBBBBBB", shifts)
-    
+    # if there is something within the shifts variable
     if len(shifts) == 1:
+      # then select the first shift in the list
       shift = shifts[0]
-      print("CCCCCCCCCCCCC", shift)
-      
+      # and save a clock out data to that shift
       shift.clock_out_time = timezone.now()
       shift.clock_out_date = datetime.date.today()      
       shift.save()
-
+    # if all shifts already have clock out data
     else:
+      # then create a new shift and save clock in data
       shift = Shift(
         clock_in_time = timezone.now(),
         clock_in_date = datetime.date.today(),
@@ -37,7 +36,6 @@ def clockin(request):
     return HttpResponseRedirect(reverse('website:index'))
 
   elif request.method == 'GET':
-    
     template_name = 'website/number_pad.html'
     
     return render(request, template_name)
