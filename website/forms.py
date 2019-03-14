@@ -58,11 +58,5 @@ class ManagerEditForm(forms.ModelForm):
     model = Manager
     fields = ('company_name', 'address', 'phone_number',)
 
-class ClockInForm(forms.ModelForm):
 
-  class Meta:
-    model = Employee
-    fields = ('pin_code',)
-  
-       
 

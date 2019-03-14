@@ -14,14 +14,25 @@ def clockin(request):
   if request.method == 'POST':
     form_data = request.POST.get('pin_code')
     employee = Employee.objects.get(pin_code=form_data)
-    print("HEHEHEHEHEHEHEHEHEHEH", employee)
-    # TODO:if statement
-    shift = Shift(
-      clock_in_time = timezone.now(),
-      clock_in_date = datetime.date.today(),
-      employee = employee,      
-    )
-    shift.save()
+    shifts = Shift.objects.filter(employee=employee).filter(clock_out_date=None)
+    print("AAAAAAAAAAAAAAAA", employee)
+    print("BBBBBBBBBB", shifts)
+    
+    if len(shifts) == 1:
+      shift = shifts[0]
+      print("CCCCCCCCCCCCC", shift)
+      
+      shift.clock_out_time = timezone.now()
+      shift.clock_out_date = datetime.date.today()      
+      shift.save()
+
+    else:
+      shift = Shift(
+        clock_in_time = timezone.now(),
+        clock_in_date = datetime.date.today(),
+        employee = employee,      
+      )
+      shift.save()
 
     return HttpResponseRedirect(reverse('website:index'))
 
