@@ -11,23 +11,16 @@ def clockinEdit(request, shift_id):
   
   print("HERHERHEJKHRJKEHJKR", shift)
   
-  # if request.method == 'POST':
-  #   form_data = request.POST
+  if request.method == 'POST':
+    form_data = request.POST
   
-  #   employee.first_name = form_data['first_name']
-  #   employee.last_name = form_data['last_name']
-  #   employee.pay_rate = form_data['pay_rate']
-  #   employee.start_date = form_data['start_date']
-  #   employee.pin_code = form_data['pin_code']
-  #   if form_data['end_date'] == '':
-  #     employee.end_date = None
-  #   else:
-  #     employee.end_date = form_data['end_date']
+    shift.clock_in_time = form_data['clock_in_time']
+    shift.clock_in_date = form_data['clock_in_date']
+    shift.clock_out_time = form_data['clock_out_time']
+    shift.clock_out_date = form_data['clock_out_date']
 
-  #   employee.manager = request.user.manager
-
-  #   employee.save()
-  #   return HttpResponseRedirect(reverse('website:employeeDetail', args=[employee.id]))
+    shift.save()
+    return HttpResponseRedirect(reverse('website:employeeDetail', args=[shift.employee.id]))
   
   if request.method == 'GET':
     shift_form = ShiftEditForm(instance=shift)
