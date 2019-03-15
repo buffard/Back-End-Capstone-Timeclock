@@ -9,5 +9,4 @@ def clockinDelete(self, shift_id):
     shift = get_object_or_404(Shift, pk=shift_id)
 
     shift.delete()
-    return HttpResponseRedirect(reverse('website:user-home'))
-  
+    return HttpResponseRedirect(reverse('website:employeeDetail', args=[shift.employee.id]))
