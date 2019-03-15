@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 
 from website.models import Shift
 
-def clockinDelete(self, shift_id):
+def clockinDelete(request, shift_id):
     
     shift = get_object_or_404(Shift, pk=shift_id)
 
