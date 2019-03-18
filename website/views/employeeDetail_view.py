@@ -8,7 +8,7 @@ def employeeDetail(request, employee_id):
   context = { 'employee': employee, 'all_shifts': all_shifts}
   return render(request, 'website/employee_detail.html', context)
 
-  
+
 
 
 

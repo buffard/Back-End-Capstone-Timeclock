@@ -19,4 +19,7 @@ urlpatterns = [
   path('account/<int:manager_id>/', views.account, name='account'),
   path('accountEdit/<int:manager_id>/', views.accountEdit, name='accountEdit'),
   path('clockin/', views.clockin, name='clockin'),
+  path('clockin/edit/<int:shift_id>/', views.clockinEdit, name='clockinEdit'),
+  path('clockin/delete/<int:shift_id>', views.clockinDelete, name='clockinDelete'),
+  
 ]
