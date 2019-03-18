@@ -105,14 +105,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+# changed to match Nashville time zone
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
 USE_L10N = True
-
-USE_TZ = True
+# set to false so I could use the CST timezone
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
