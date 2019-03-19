@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render, reverse
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.utils import timezone 
 from website.models import Employee, Shift
@@ -23,6 +24,8 @@ def clockin(request):
       shift.clock_out_time = timezone.now()
       shift.clock_out_date = datetime.date.today()      
       shift.save()
+      messages.success(request, 'Clocked Out', extra_tags='alert-danger')
+
     # if all shifts already have clock out data
     else:
       # then create a new shift and save clock in data
@@ -32,7 +35,7 @@ def clockin(request):
         employee = employee,      
       )
       shift.save()
-
+      messages.success(request, 'Clocked In', extra_tags='alert-success')
     return HttpResponseRedirect(reverse('website:index'))
 
   elif request.method == 'GET':
