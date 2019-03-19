@@ -13,7 +13,7 @@ The following functionalities are part of Bike Dash:
 1. Employee: add, edit, detail, list
 1. Shifts: add, edit, delete, list
 
-##App Flow
+## App Flow
 This app has 4 goals:
 1. Track employee personal data
 1. Track employee worked shifts
@@ -31,9 +31,21 @@ Typical flow:
 
 ## ERD
 
-![bike dash erd](website/static/ERD-shift-tally.png)
-
+![shift tally erd](website/static/ERD-shift-tally.png)
 
 ## To Clone
+1. Create a directory
+1. cd into that directory
+1. Clone the repository
+1. Start a virtual environment
+1. Run pip install django
+1. Create migrations python manage.py makemigrations bikes
+1. Apply migrations to db python manage.py migrate
+1. run python manage.py runserver
+1. Open up your browser and navigate to the running server
+1. Register, add employee, and now that employee can clock in & out with the pin code you provided
 
+## Created by Samuel Webber
+I'm a graduate of [Nashville Software School](http://nashvillesoftwareschool.com/) 
+Learn more about me at [samuelwebber.com](http://www.samuelwebber.com/)
 
