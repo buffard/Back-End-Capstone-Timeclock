@@ -2,6 +2,11 @@
 {% block content %}
 
     <h1>Add a Employee</h1>
+    
+    {% for message in messages %}
+    <div class="{{ message.tags }} alert alert-danger" role="alert">{{ message }}</div>
+    <hr>
+    {% endfor %}
 
     <form id="user_form" method="post" action="{% url 'website:addEmployee' %}"
             enctype="multipart/form-data">

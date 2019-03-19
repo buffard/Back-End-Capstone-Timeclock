@@ -1,12 +1,15 @@
-# Welcome to Timeclock
+# Welcome to Shift Tally
+> A Python Django web app that allows users to track their employees, employee's personal info, and allows employees to record their working hours. 
 
-This web application is the source code for the Bangazon e-commerce web site. It is powered by Python and Django.
+## Background
+I spent most of my twenties working for coffee shops and a few other small businesses.  I noticed that in most of these positions the owner didn't have a good resource for a time clock.  Most of the small businesses I worked at had employees write down their hours in an excel sheet or on a piece of paper and turn it in. I wanted to create an option for small business owners to keep track of hours.
 
-Students, you are inheriting a basic implementation that provides the following features:
+## General app functionality
 
-1. User registration 
-1. User login 
-1. User logout 
-1. Adding a product 
-1. Listing products
+
+## ERD
+
+
+## To Clone
+
 
