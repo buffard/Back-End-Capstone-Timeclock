@@ -9,6 +9,7 @@ from ..models import Employee, Shift
 def userHome(request):
   if request.method == "GET":
     current_user = request.user
+    shifts = Shift.objects.all()
     all_employees = Employee.objects.filter(manager_id=current_user.id)
-    context = {'all_employees': all_employees}
+    context = {'all_employees': all_employees, 'shifts': shifts }
     return render(request, 'website/user_home.html', context)

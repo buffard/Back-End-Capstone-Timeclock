@@ -7,18 +7,31 @@
 <h1 class="mt-4 mb-3">Current Employees</h1>
 
 <ul class="list-group">  
+
     {% for employee in all_employees %}
     {% if employee.end_date == Null %}
     <div class='grid-container'>
     <li class="list-group-item">
+      {% if employee.isClockedIn == True %}
+      <i class="fas fa-circle clockedin"></i>
+      {% else %}
+      <i class="fas fa-circle clockedout"></i>
+      {% endif %}
+
       <a class="text-info" href="{% url 'website:employeeDetail' employee.id %}">
         {{ employee.first_name }} {{ employee.last_name }}
+        {{ employee.isClockedIn }}
       </a>
+      
+      
+
     </li>
     </div>
+
     {% else %}  
     {% endif %}
     {% endfor %}
+    
 </ul>
 
 </div>
