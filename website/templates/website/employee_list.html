@@ -5,7 +5,9 @@
   </a>
 
 <h1 class="mt-4 mb-3">Current Employees</h1>
+<p><i class="fas fa-circle clockedin"> = Clocked In</i> <i class="fas fa-circle clockedout"> = Clocked Out</i>
 
+</p>
 <ul class="list-group">  
 
     {% for employee in all_employees %}
@@ -20,11 +22,7 @@
 
       <a class="text-info" href="{% url 'website:employeeDetail' employee.id %}">
         {{ employee.first_name }} {{ employee.last_name }}
-        {{ employee.isClockedIn }}
       </a>
-      
-      
-
     </li>
     </div>
 
