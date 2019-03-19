@@ -3,3 +3,11 @@
 .cardSize {
   max-width: 200px !important;  
 }
+
+.clockedin {
+  color: green;
+}
+
+.clockedout {
+  color: red;
+}

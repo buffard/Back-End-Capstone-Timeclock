@@ -20,6 +20,14 @@ class Employee(models.Model):
   deactivate = models.BooleanField(default=False)
   manager = models.ForeignKey("Manager", on_delete=models.CASCADE)
 
+  @property
+  def isClockedIn(self):
+    shift = Shift.objects.filter(employee=self.id).filter(clock_out_date=None)
+    if len(shift) == 1:
+      return True
+    else:
+      return False
+
 class Shift(models.Model):
   clock_in_time = models.TimeField(default = None, null=True)
   clock_out_time = models.TimeField(default = None, null=True)
