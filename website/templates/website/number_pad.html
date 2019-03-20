@@ -28,12 +28,13 @@
 
     {% endcomment %}
 
+    <center>
 
     {% for message in messages %}
     <div class="{{ message.tags }} alert" role="alert">{{ message }}</div>
     <hr>
     {% endfor %}
-
+    
     <form id="user_form" method="post" action="{% url 'website:clockin' %}"
             enctype="multipart/form-data">
 
@@ -48,5 +49,6 @@
         <input type="submit" name="submit" value="Save" class="btn btn-primary" />
 
     </form>
+  </center>
 
 {% endblock number_pad %}

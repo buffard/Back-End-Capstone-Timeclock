@@ -1,20 +1,26 @@
 {% extends "index.html" %}
 
 {% block content %}
+<br>
+<br>
+<br>
+<div class="row">
+  <div class='col-sm-3'>
+  </div>
+    <div class="col-sm-6">
+      <div class="card ">
+        <div class="card-body">
 {% block login %}
 {% include "login.html" %}
 {% endblock login %}
-</br>
-
-<div>
-    <h3>Register:</h3>
-    <a href="{% url 'website:register' %}">Register</a>
+<br>
+<p class='text-center'>New to Shift Tally?</p>
+<a class="btn btn-secondary btn-lg btn-block" href="{% url 'website:register' %}">Register</a>
 </div>
-</br>
-<div>
-  <a href="{% url 'website:index' %}">
-      <i class="far fa-arrow-alt-circle-left"></i>
-      Take me back Home</a>
+</div>
+<br>
+<a href="{% url 'website:index' %}">
+    <i class="far fa-arrow-alt-circle-left"></i>
+    Take me back Home</a>
 </div>
 {% endblock content %}
- 
