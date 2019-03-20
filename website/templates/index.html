@@ -13,25 +13,29 @@
   
   <!-- CSS File -->
   <link rel="stylesheet" href="../static/index.css" />
-
   <title>Shift Tally</title>
 </head>
 <body> 
-
-  {% if user.is_authenticated %}
-    {% block usernav %}
-    {% include "website/user_home_navbar.html" %}
-    {% endblock usernav %}
-  {% else %}  
-    {% block nav %}
-    {% include "website/home_navbar.html" %}
-    {% endblock nav %}
-  {% endif %}
-
-<div class="container">
-  {% block content %}
   
-  <h1>Welcome to Shift Tally!</h1>
+  {% if user.is_authenticated %}
+  {% block usernav %}
+  {% include "website/user_home_navbar.html" %}
+  {% endblock usernav %}
+  {% else %}  
+  {% block nav %}
+  {% include "website/home_navbar.html" %}
+  {% endblock nav %}
+  {% endif %}
+  
+  <div class="container">
+    {% block content %}
+    <center>
+  <br>
+  <br>
+  <!--&ensp; adds a space  -->
+  <h1>&ensp;Welcome to Shift Tally!</h1>
+  
+  </center>
   {% block number_pad %}
   {% include "website/number_pad.html" %}
   {% endblock number_pad %}
@@ -40,7 +44,6 @@
 
   {% endblock content %}
 </div>
-
 
     <!-- JavaScript ofr Bootstrap -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

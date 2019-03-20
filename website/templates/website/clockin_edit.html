@@ -13,9 +13,8 @@
                 making everything look neater. -->
         {{ shift_form.as_p }}
 
-        <a class="nav-link link" href="{% url 'website:employeeDetail' employee %}">
-            <button type="button" class="btn btn-outline-info">
-                <i class="fas fa-arrow-circle-left"></i> Back</button></a>
+        <a class="btn btn-outline-info" href="{% url 'website:employeeDetail' employee %}">
+                <i class="fas fa-arrow-circle-left"></i> Back</a>
                 
         <input type="submit" name="submit" value="Save" class="btn btn-primary" />
         
