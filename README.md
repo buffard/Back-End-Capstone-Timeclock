@@ -1,8 +1,8 @@
 # Welcome to Shift Tally
-> A Python Django web app that allows users to track their employees, employee's personal info, and allows employees to record their working hours. 
+> A Python Django web app that allows managers to create an employee profile and allow employees to record their working hours.
 
 ## Background
-I spent most of my twenties working for coffee shops and a few other small businesses.  I noticed that in most of these positions the owner didn't have a good resource for a time clock.  Most of the small businesses I worked at had employees write down their hours in an excel sheet or on a piece of paper and turn it in. I wanted to create an option for small business owners to keep track of hours.
+Throughout my twenties I worked for different coffee shops and other small businesses. I noticed in most of these positions the owner didn't have a good resource for tracking employee hours. Most of the businesses had employees record their own hours and turn them in from an excel sheet or text message. I wanted to create an better option for small business owners to keep track of employee hours.
 
 ## General App Functionality
 The following functionalities are part of Bike Dash:
