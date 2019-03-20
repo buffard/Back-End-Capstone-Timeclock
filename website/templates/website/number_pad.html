@@ -29,7 +29,10 @@
     {% endcomment %}
 
 
-    
+    {% for message in messages %}
+    <div class="{{ message.tags }} alert" role="alert">{{ message }}</div>
+    <hr>
+    {% endfor %}
 
     <form id="user_form" method="post" action="{% url 'website:clockin' %}"
             enctype="multipart/form-data">
