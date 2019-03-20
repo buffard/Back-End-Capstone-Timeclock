@@ -49,7 +49,7 @@ Typical flow:
 I'm a graduate of [Nashville Software School](http://nashvillesoftwareschool.com/) 
 Learn more about me at [samuelwebber.com](http://www.samuelwebber.com/)
 
-## Stretch Goals for Future Verisons
+### Stretch Goals for Future Verisons
 - Ability to take a photo of an employee as they clock in to ensure that they are who they say they are 
 - Set it so you are not able to edit clock in/out times that are 3 weeks old
 - Set it up so a user can search for hours worked as well as the payroll for the entire company within a specific time frame
