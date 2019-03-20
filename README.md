@@ -21,13 +21,13 @@ This app has 4 goals:
 1. Allow employees to easily clock in using their pre-assigned pin code
 
 Typical flow:
-<!-- TODO: For the typical flow, for anything a manager does, I'd indicate that (Manager creates new employees, etc) -> that'll show that you have two clear users and it's the manager who does the "behind the scenes" things -->
-1. Create new employees
+
+1. Manager creates new employees
 1. An employee can enter their given pin code into the affordance to clock in or out
-1. Check your dashboard to see which active employees are currently clocked in or not
-1. Edit employee details
-1. Edit/delete employee shifts
-1. Mark an employee inactive 
+1. Manager can check your dashboard to see which active employees are currently clocked in or not
+1. Manager edits employee details
+1. Manager can edit/delete employee shifts
+1. Manager marks an employee inactive 
 
 ## ERD
 
