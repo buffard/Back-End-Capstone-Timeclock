@@ -7,10 +7,21 @@ from website.forms import UserEditForm, ManagerEditForm
 
 
 def accountEdit(request, manager_id):
+  '''
+    View for account edit. This view allows users to edit their account information. 
+    
+    Allowed verbs: GET, POST
+    
+    returns a form to edit the user's account and then posts to database
+    '''
+
+  # get our current user's information
   user = get_object_or_404(User, pk=manager_id)
+  # get our current user's' manager information
   manager = get_object_or_404(Manager, pk=manager_id)
-  
+  # check to see if our request is for a POST
   if request.method == 'POST':
+    
     form_data = request.POST
   
     user.username = form_data['username']

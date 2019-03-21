@@ -37,5 +37,6 @@ def addEmployee(request):
   elif request.method == 'GET':
     employee_form = EmployeeForm()
     template_name = 'website/employee_add.html'
-    return render(request, template_name, {'employee_form': employee_form})
+    context = {'employee_form': employee_form}
+    return render(request, template_name, context)
 
