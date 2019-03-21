@@ -23,5 +23,4 @@ def clockinEdit(request, shift_id):
     shift_form = ShiftEditForm(instance=shift)
     template_name = 'website/clockin_edit.html'
     context = {'shift_form': shift_form, 'shift': shift_id, 'employee': shift.employee.id}
-    print("Cccccccccccccccc", context)
     return render(request, template_name, context)
