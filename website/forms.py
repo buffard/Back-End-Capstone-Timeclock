@@ -21,6 +21,7 @@ class DateInput(forms.DateInput):
 
 class TimeInput(forms.TimeInput):
   input_type = 'time'
+  
 
 class EmployeeForm(forms.ModelForm):
   
@@ -64,6 +65,7 @@ class ManagerEditForm(forms.ModelForm):
 class ShiftEditForm(forms.ModelForm):
 
   class Meta:
+    
     model = Shift
     fields = ('clock_in_time', 'clock_in_date', 'clock_out_time', 'clock_out_date',)
     widgets = {
@@ -72,3 +74,4 @@ class ShiftEditForm(forms.ModelForm):
       'clock_out_time': TimeInput(),
       'clock_out_date': DateInput(),
     }
+

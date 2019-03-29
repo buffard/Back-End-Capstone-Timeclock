@@ -22,6 +22,7 @@ def clockin(request):
       shift = shifts[0]
       # and save a clock out data to that shift
       shift.clock_out_time = timezone.now()
+      shift.clock_out_time = shift.clock_out_time.replace(microsecond=0)
       shift.clock_out_date = datetime.date.today()      
       shift.save()
       messages.success(request, 'Clocked Out', extra_tags='alert-danger')
@@ -30,7 +31,7 @@ def clockin(request):
     else:
       # then create a new shift and save clock in data
       shift = Shift(
-        clock_in_time = timezone.now(),
+        clock_in_time = timezone.now().replace(microsecond=0),
         clock_in_date = datetime.date.today(),
         employee = employee,      
       )

@@ -11,7 +11,9 @@ def employeeDetail(request, employee_id):
 
     strtime1 = str(shift.clock_in_time)
     strtime2 = str(shift.clock_out_time)
+    
     time1 = datetime.strptime(strtime1, "%H:%M:%S.%f")
+
     time2 = datetime.strptime(strtime2, "%H:%M:%S.%f")
     #find the difference between two dates
     diff = time2 - time1   
@@ -25,7 +27,7 @@ def employeeDetail(request, employee_id):
     # shows seconds between shifts
     print ("Seconds", str(seconds) + ' second(s)')
 
-    
+    # TODO:finish and clean this up but first need to update time post so it doesnt include millis
     diff_btw_two_times = (seconds) / 3600
     overall_hours = diff_btw_two_times
     print (str(overall_hours) + ' hours')
