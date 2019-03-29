@@ -51,7 +51,7 @@
     {% for shift in all_shifts %}
     <div class='grid-container'>
     <li class="list-group-item">
-      <p>Clock In: {{ shift.clock_in_date}}, {{ shift.clock_in_time }} Clock Out: {{ shift.clock_out_date}}, {{ shift.clock_out_time }}
+      <p><b>Time Worked:</b> {{ overall_hours }} hrs <b>Clock In:</b> {{ shift.clock_in_date}}, {{ shift.clock_in_time }} <b>Clock Out:</b> {{ shift.clock_out_date}}, {{ shift.clock_out_time }}
       <a href="{% url 'website:clockinEdit' shift.id %}">
         <button type="button" class="btn btn-primary btn-sm">Edit</button>
       </a>

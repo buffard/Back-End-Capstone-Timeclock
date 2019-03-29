@@ -12,9 +12,8 @@ def employeeDetail(request, employee_id):
     strtime1 = str(shift.clock_in_time)
     strtime2 = str(shift.clock_out_time)
     
-    time1 = datetime.strptime(strtime1, "%H:%M:%S.%f")
-
-    time2 = datetime.strptime(strtime2, "%H:%M:%S.%f")
+    time1 = datetime.strptime(strtime1, "%H:%M:%S")
+    time2 = datetime.strptime(strtime2, "%H:%M:%S")
     #find the difference between two dates
     diff = time2 - time1   
     seconds = diff.seconds
@@ -27,19 +26,11 @@ def employeeDetail(request, employee_id):
     # shows seconds between shifts
     print ("Seconds", str(seconds) + ' second(s)')
 
-    # TODO:finish and clean this up but first need to update time post so it doesnt include millis
-    diff_btw_two_times = (seconds) / 3600
-    overall_hours = diff_btw_two_times
+    # take the difference in seconds and convert to hours and round to 2 decimal places
+    overall_hours = (round((seconds / 3600), 2))
     print (str(overall_hours) + ' hours')
-    
 
-
- 
-
-
-
-
-  context = { 'employee': employee, 'all_shifts': all_shifts}
+  context = { 'employee': employee, 'all_shifts': all_shifts, 'overall_hours': overall_hours}
   return render(request, 'website/employee_detail.html', context)
 
 
