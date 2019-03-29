@@ -7,6 +7,7 @@ from datetime import datetime, time, date
 def employeeDetail(request, employee_id):
   employee = get_object_or_404(Employee, pk=employee_id)
   all_shifts = Shift.objects.filter(employee_id=employee_id)
+  list_of_hours = list()
   for shift in all_shifts:
 
     strtime1 = str(shift.clock_in_time)
@@ -25,18 +26,18 @@ def employeeDetail(request, employee_id):
     print("DIFF", diff)
     # shows seconds between shifts
     print ("Seconds", str(seconds) + ' second(s)')
-
     # take the difference in seconds and convert to hours and round to 2 decimal places
     overall_hours = (round((seconds / 3600), 2))
     print (str(overall_hours) + ' hours')
+    list_of_hours.append(overall_hours)
 
-  context = { 'employee': employee, 'all_shifts': all_shifts, 'overall_hours': overall_hours}
+  context = { 'employee': employee, 'all_shifts': all_shifts, 'list_of_hours': list_of_hours}
   return render(request, 'website/employee_detail.html', context)
 
 
 
 
-
+ 
 
 
  
