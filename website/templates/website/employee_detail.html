@@ -48,8 +48,10 @@
 </div>
 
 <ul class="list-group">
+  {% for hours in list_of_hours %}
     {% for shift in all_shifts %}
-    {% for hours in list_of_hours %}
+
+    
     <div class='grid-container'>
     <li class="list-group-item">
       <p><b>Time Worked:</b> {{ hours }} hrs <b>Clock In:</b> {{ shift.clock_in_date}}, {{ shift.clock_in_time }} <b>Clock Out:</b> {{ shift.clock_out_date}}, {{ shift.clock_out_time }}
@@ -63,8 +65,10 @@
 
     </li>
     </div>
+
     {% endfor %}
     {% endfor %}
     
 </ul>
 {% endblock content %}
+

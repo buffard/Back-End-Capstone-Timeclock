@@ -30,6 +30,7 @@ def employeeDetail(request, employee_id):
     overall_hours = (round((seconds / 3600), 2))
     print (str(overall_hours) + ' hours')
     list_of_hours.append(overall_hours)
+    print(list_of_hours)
 
   context = { 'employee': employee, 'all_shifts': all_shifts, 'list_of_hours': list_of_hours}
   return render(request, 'website/employee_detail.html', context)
